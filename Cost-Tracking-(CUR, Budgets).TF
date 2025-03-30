@@ -1,94 +1,45 @@
+# main.tf for Cost Tracking
 provider "aws" {
-  region = "us-east-1" # Modify as needed
+  region = "us-east-1"
 }
 
-# --- AWS Cost & Usage Report (CUR) ---
-resource "aws_cur_report_definition" "cost_usage_report" {
-  report_name          = "daily-cost-usage-report"
-  time_unit           = "DAILY"
-  format              = "textORcsv"
-  compression         = "GZIP"
-  additional_schema_elements = ["RESOURCES"]
-  s3_bucket           = aws_s3_bucket.cost_reports.bucket
-  s3_prefix           = "reports"
-  s3_region           = "us-east-1"
-  report_versioning   = "OVERWRITE_REPORT"
-}
-
-resource "aws_s3_bucket" "cost_reports" {
-  bucket = "cost-usage-reports-bucket-${random_id.suffix.hex}"
+# Create S3 bucket for Cost and Usage Reports
+resource "aws_s3_bucket" "cur_bucket" {
+  bucket = "atlan-cur-reports-${random_id.bucket_suffix.hex}"
   acl    = "private"
-  force_destroy = true
 }
 
-resource "random_id" "suffix" {
+resource "random_id" "bucket_suffix" {
   byte_length = 4
 }
 
-# --- AWS Budgets ---
-resource "aws_budgets_budget" "monthly_cost_budget" {
+# Enable Cost and Usage Report
+resource "aws_cur_report_definition" "atlan_cur" {
+  report_name                = "AtlanCostUsageReport"
+  time_unit                  = "DAILY"
+  format                     = "textORcsv"
+  compression                = "GZIP"
+  additional_schema_elements = ["RESOURCES"]
+  s3_bucket                  = aws_s3_bucket.cur_bucket.bucket
+  s3_region                  = "us-east-1"
+  s3_prefix                  = "cur"
+  report_versioning          = "OVERWRITE_REPORT"
+}
+
+# Create AWS Budget
+resource "aws_budgets_budget" "monthly_cost" {
   name              = "monthly-cost-budget"
   budget_type       = "COST"
-  limit_amount      = "1000" # Set your budget threshold (e.g., $1000)
+  limit_amount      = "1000"
   limit_unit        = "USD"
+  time_period_start = "2023-01-01_00:00"
   time_unit         = "MONTHLY"
 
   notification {
-    comparison_operator = "GREATER_THAN"
-    threshold           = 80 # Alert at 80% of budget
-    threshold_type      = "PERCENTAGE"
-    notification_type   = "ACTUAL"
-    subscriber_email_addresses = ["team@example.com"] # Replace with your email
+    comparison_operator        = "GREATER_THAN"
+    threshold                  = 80
+    threshold_type             = "PERCENTAGE"
+    notification_type          = "ACTUAL"
+    subscriber_email_addresses = ["team@atlan.com"]
   }
-}
-
-# --- IAM Role for Cost Explorer Access ---
-resource "aws_iam_role" "cost_explorer_role" {
-  name = "CostExplorerReadOnlyRole"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Action = "sts:AssumeRole",
-        Effect = "Allow",
-        Principal = {
-          Service = "cost-explorer.amazonaws.com"
-        }
-      }
-    ]
-  })
-}
-
-resource "aws_iam_policy" "cost_explorer_policy" {
-  name        = "CostExplorerReadOnlyPolicy"
-  description = "Allows read-only access to AWS Cost Explorer"
-
-  policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Action = [
-          "ce:GetCostAndUsage",
-          "ce:GetCostForecast"
-        ],
-        Effect   = "Allow",
-        Resource = "*"
-      }
-    ]
-  })
-}
-
-resource "aws_iam_role_policy_attachment" "cost_explorer_attach" {
-  role       = aws_iam_role.cost_explorer_role.name
-  policy_arn = aws_iam_policy.cost_explorer_policy.arn
-}
-
-# --- Outputs ---
-output "cur_bucket_name" {
-  value = aws_s3_bucket.cost_reports.bucket
-}
-
-output "budget_name" {
-  value = aws_budgets_budget.monthly_cost_budget.name
 }
