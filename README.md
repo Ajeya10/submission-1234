@@ -8,7 +8,7 @@ Here's a `README.md` file for your GitHub repository that explains the AWS cost 
 
 A Terraform-based solution to monitor, alert, and optimize AWS cloud costs with automated governance controls.
 
-## 🚀 Solution Overview
+##  Solution Overview
 
 This repository implements a complete AWS-native cost optimization framework addressing four key challenges:
 
@@ -17,7 +17,7 @@ This repository implements a complete AWS-native cost optimization framework add
 3. **Automated optimization** of compute resources
 4. **Governance enforcement** through SCPs and tagging policies
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 ├── cost-tracking/          # CUR, Budgets, Cost Explorer setup
@@ -28,24 +28,24 @@ This repository implements a complete AWS-native cost optimization framework add
 └── README.md
 ```
 
-## ✨ Key Features
+##  Key Features
 
 ✅ **Cost Visibility**
 - Daily Cost and Usage Reports (CUR) to S3
 - AWS Budgets with email/Slack notifications
 - QuickSight dashboards for cost analysis
 
-🔔 **Smart Alerting**
+ **Smart Alerting**
 - AI-based cost anomaly detection
 - Multi-channel alerts (Email/Slack/SMS)
 - Threshold-based CloudWatch alarms
 
-⚡ **Automated Optimization**
+ **Automated Optimization**
 - Right-sizing recommendations via Compute Optimizer
 - Scheduled scaling for non-production resources
 - Idle resource identification with Trusted Advisor
 
-🛡️ **Governance Controls**
+🛡 **Governance Controls**
 - Mandatory tagging enforcement via SCPs
 - AWS Config for compliance monitoring
 - Resource grouping by project/environment
@@ -63,22 +63,15 @@ terraform plan
 terraform apply
 ```
 
-## 📈 Expected Outcomes
+##  Expected Outcomes
 
 - 30-50% reduction in wasted cloud spend
 - Near real-time cost anomaly detection
 - Automated prevention of untagged resources
 - Continuous optimization of compute resources
 
-## 🤝 Contribution
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
-
-## 📜 License
+##  License
 
 Apache 2.0
 ```
