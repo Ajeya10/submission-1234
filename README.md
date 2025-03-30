@@ -36,6 +36,15 @@ A comprehensive solution to reduce AWS costs through automated resource cleanup,
 - Automated S3 storage lifecycle
 - Pre-built Grafana dashboards
 
+## 4. **Automated Cost Reporting & Budgeting** 💰
+**Technology**: AWS CUR + Budgets + Cost Explorer  
+**Purpose**: Provides automated cost tracking and budget alerts  
+**Key Features**:
+- Daily cost reports in S3 (CSV/GZIP format)
+- Monthly budget thresholds with email alerts
+- Cost Explorer API access via IAM role
+- Historical cost data retention
+
 ## 🛠️ Architecture
 
 ```mermaid
