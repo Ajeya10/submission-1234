@@ -49,11 +49,15 @@ A comprehensive solution to reduce AWS costs through automated resource cleanup,
 
 ```mermaid
 graph LR
-    A[CUR_AWS_Cost_&_Usage_Report] -->|CSV/Parquet| B[S3_Bucket]
-    B --> C[Athena]
-    D[Tag Policy] --> E[All AWS Resources]
-    F[Lambda] --> G[EC2/EBS Cleanup]
-    G --> H[Email]
+     A[AWS Services] --> B[Cost & Usage Report]
+    B -->|Daily CSV/GZIP| C[(S3 Bucket)]
+    C --> D[Athena Queries]
+    C --> E[Custom Analytics]
+    A --> F[Budget Alerts]
+    F -->|Email/SNS| G[Team Notifications]
+    A --> H[Cost Explorer]
+    H --> I[API Access]
+    I --> J[Custom Dashboards]
 ```
  Deployment
 Prerequisites
