@@ -44,10 +44,15 @@ This repository implements a complete AWS-native cost optimization framework add
 - Scheduled scaling for non-production resources
 - Idle resource identification with Trusted Advisor
 
-🛡 **Governance Controls**
+ **Governance Controls**
 - Mandatory tagging enforcement via SCPs
 - AWS Config for compliance monitoring
 - Resource grouping by project/environment
+
+##  Storage Cleanup
+- Automated Lambda for orphaned EBS volume cleanup
+- lambda automation for orphaned ebs termination
+- Removing deployment not in use 
 
 ## 🛠️ Implementation
 
