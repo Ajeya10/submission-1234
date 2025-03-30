@@ -7,9 +7,9 @@
 
 A comprehensive solution to reduce AWS costs through automated resource cleanup, tagging enforcement, and cost visibility.
 
-## 📦 Projects Overview
+##  Projects Overview
 
-### 1. **Orphaned EBS Volume Cleanup** 🔍
+### 1. **Orphaned EBS Volume Cleanup** 
 **Technology**: AWS Lambda (Python) + IAM  
 **Purpose**: Automatically identifies and deletes unattached EBS volumes and their snapshots  
 **Key Features**:
@@ -18,7 +18,7 @@ A comprehensive solution to reduce AWS costs through automated resource cleanup,
 - Maintains audit trail of deleted resources
 - Whitelisting capability for protected resources
 
-### 2. **Tag Enforcement Policy** 🏷️
+### 2. **Tag Enforcement Policy** 🏷
 **Technology**: Terraform + AWS Config  
 **Purpose**: Enforces mandatory tagging compliance across all AWS resources  
 **Key Features**:
@@ -27,7 +27,7 @@ A comprehensive solution to reduce AWS costs through automated resource cleanup,
 - Integrates with AWS Organizations
 - Email notifications for non-compliant resources
 
-### 3. **Cost Visibility Pipeline** 📊
+### 3. **Cost Visibility Pipeline** 
 **Technology**: AWS CUR + Athena + Terraform  
 **Purpose**: Provides granular cost analysis and reporting  
 **Key Features**:
