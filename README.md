@@ -1,6 +1,6 @@
 Here's a `README.md` file for your GitHub repository that explains the AWS cost optimization solution:
 
-# AWS Cost Optimization for Atlan
+# AWS Cost Optimization 
 
 ![AWS Cost Optimization](https://img.shields.io/badge/AWS-Cost_Optimization-orange?logo=amazon-aws) 
 ![Terraform](https://img.shields.io/badge/Terraform-Infrastructure_as_Code-blue?logo=terraform)
@@ -77,7 +77,7 @@ Apache 2.0
 
 ## Message to Include When Creating the Repo:
 
-"Here's our Terraform-based AWS cost optimization framework designed specifically for Atlan's cloud cost challenges. This solution provides:
+"Here's our Terraform-based AWS cost optimization framework designed specifically for 's cloud cost challenges. This solution provides:
 
 1. **Immediate cost visibility** through automated CUR reports and budgets
 2. **Proactive alerting** when spending deviates from patterns
@@ -91,4 +91,4 @@ The modular Terraform code allows phased implementation:
 
 Each directory contains standalone Terraform configurations that can be deployed independently while working together as a complete system."
 
-Would you like me to suggest any additional documentation or include specific setup instructions for Atlan's environment?
+Would you like me to suggest any additional documentation or include specific setup instructions for 's environment?
