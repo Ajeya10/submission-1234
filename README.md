@@ -18,7 +18,7 @@ A comprehensive solution to reduce AWS costs through automated resource cleanup,
 - Maintains audit trail of deleted resources
 - Whitelisting capability for protected resources
 
-### 2. **Tag Enforcement Policy** 🏷
+### 2. **Tag Enforcement Policy**
 **Technology**: Terraform + AWS Config  
 **Purpose**: Enforces mandatory tagging compliance across all AWS resources  
 **Key Features**:
