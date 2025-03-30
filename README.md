@@ -44,7 +44,7 @@ graph LR
     B --> C[Athena]
     D[Tag Policy] --> E[All AWS Resources]
     F[Lambda] --> G[EC2/EBS Cleanup]
-    G --> H[Slack Alerts]
+    G --> H[Email]
 ```
  Deployment
 Prerequisites
@@ -67,7 +67,9 @@ terraform init
 # Deploy infrastructure (review plan first)
 terraform plan 
 terraform apply 
-🔒 Security
+
+## Security
+
 Least-privilege IAM roles
 
 S3 encryption at rest (AES-256)
@@ -76,14 +78,14 @@ AWS Config rules for continuous compliance
 
 CloudTrail logging for all actions
 
-📊 Monitoring & Alerts
+## Monitoring & Alerts
 CloudWatch Dashboards for cost trends
 
 Slack Notifications for cleanup actions
 
 Weekly Email Reports (via Amazon SES)
 
-🏆 Best Practices Implemented
+## Best Practices Implemented
 Resource tagging standardization
 
 Automated cleanup of unused resources
@@ -94,17 +96,7 @@ Infrastructure-as-Code (Terraform)
 
 Documentation-driven development
 
- Contributing
-Fork the project
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
-
-Commit your changes (git commit -m 'Add some AmazingFeature')
-
-Push to the branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
- License
+## License
 Distributed under the MIT License. See LICENSE for more information.
 
