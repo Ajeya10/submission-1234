@@ -1,6 +1,5 @@
 Here's a `README.md` file for your GitHub repository that explains the AWS cost optimization solution:
 
-```markdown
 # AWS Cost Optimization for Atlan
 
 ![AWS Cost Optimization](https://img.shields.io/badge/AWS-Cost_Optimization-orange?logo=amazon-aws) 
@@ -19,14 +18,14 @@ This repository implements a complete AWS-native cost optimization framework add
 
 ##  Repository Structure
 
-```
+
 ├── cost-tracking/          # CUR, Budgets, Cost Explorer setup
 ├── alerting/               # Anomaly detection and SNS alerts
 ├── optimization/           # Auto Scaling, Compute Optimizer
 ├── governance/             # SCPs, AWS Config, Resource Groups
 ├── modules/                # Shared Terraform modules
 └── README.md
-```
+
 
 ##  Key Features
 
@@ -74,7 +73,7 @@ terraform apply
 ##  License
 
 Apache 2.0
-```
+
 
 ## Message to Include When Creating the Repo:
 
