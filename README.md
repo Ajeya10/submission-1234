@@ -75,20 +75,4 @@ terraform apply
 Apache 2.0
 
 
-## Message to Include When Creating the Repo:
-
-"Here's our Terraform-based AWS cost optimization framework designed specifically for 's cloud cost challenges. This solution provides:
-
-1. **Immediate cost visibility** through automated CUR reports and budgets
-2. **Proactive alerting** when spending deviates from patterns
-3. **Continuous optimization** without manual intervention
-4. **Governance guardrails** to prevent future cost spikes
-
-The modular Terraform code allows phased implementation:
-- Start with governance and cost tracking
-- Add alerting mechanisms
-- Gradually implement optimization controls
-
 Each directory contains standalone Terraform configurations that can be deployed independently while working together as a complete system."
-
-Would you like me to suggest any additional documentation or include specific setup instructions for 's environment?
