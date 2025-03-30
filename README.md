@@ -1,4 +1,4 @@
-# AWS Cost Optimization Toolkit 🚀
+# AWS Cost Optimization Toolkit 
 
 ![AWS Cost Optimization](https://img.shields.io/badge/AWS-Cost_Optimization-orange?logo=amazonaws)
 ![Terraform](https://img.shields.io/badge/Terraform-Infrastructure_Code-blue?logo=terraform)
@@ -36,7 +36,7 @@ A comprehensive solution to reduce AWS costs through automated resource cleanup,
 - Automated S3 storage lifecycle
 - Pre-built Grafana dashboards
 
-## 4. **Automated Cost Reporting & Budgeting** 💰
+## 4. **Automated Cost Reporting & Budgeting** 
 **Technology**: AWS CUR + Budgets + Cost Explorer  
 **Purpose**: Provides automated cost tracking and budget alerts  
 **Key Features**:
