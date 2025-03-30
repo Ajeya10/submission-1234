@@ -58,3 +58,22 @@ JSON
   }
 }
 ## Organization Structure: These scripts assume you have AWS Organizations set up. For SCPs to work, you must be the management account.
+## IAM Roles: Each script requires appropriate IAM roles/policies. Example for the Config role:
+resource "aws_iam_role" "config" {
+  name = "aws-config-role"
+
+  assume_role_policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "config.amazonaws.com"
+      },
+      "Effect": "Allow"
+    }
+  ]
+}
+POLICY
+}
