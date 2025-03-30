@@ -45,3 +45,66 @@ graph LR
     D[Tag Policy] --> E[All AWS Resources]
     F[Lambda] --> G[EC2/EBS Cleanup]
     G --> H[Slack Alerts]
+```
+ Deployment
+Prerequisites
+AWS Account with billing access
+
+Terraform v1.0+
+
+AWS CLI configured
+
+Python 3.9+ (for Lambda development)
+
+# Clone repository
+git clone https://github.com/your-repo/aws-cost-optimization.git
+cd aws-cost-optimization
+
+# Initialize Terraform
+cd terraform/
+terraform init
+
+# Deploy infrastructure (review plan first)
+terraform plan 
+terraform apply 
+🔒 Security
+Least-privilege IAM roles
+
+S3 encryption at rest (AES-256)
+
+AWS Config rules for continuous compliance
+
+CloudTrail logging for all actions
+
+📊 Monitoring & Alerts
+CloudWatch Dashboards for cost trends
+
+Slack Notifications for cleanup actions
+
+Weekly Email Reports (via Amazon SES)
+
+🏆 Best Practices Implemented
+Resource tagging standardization
+
+Automated cleanup of unused resources
+
+Cost anomaly detection
+
+Infrastructure-as-Code (Terraform)
+
+Documentation-driven development
+
+ Contributing
+Fork the project
+
+Create your feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+ License
+Distributed under the MIT License. See LICENSE for more information.
+
