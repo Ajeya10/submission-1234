@@ -18,14 +18,14 @@ This repository implements a complete AWS-native cost optimization framework add
 
 ##  Repository Structure
 
-
+```
 ├── cost-tracking/          # CUR, Budgets, Cost Explorer setup
 ├── alerting/               # Anomaly detection and SNS alerts
 ├── optimization/           # Auto Scaling, Compute Optimizer
 ├── governance/             # SCPs, AWS Config, Resource Groups
 ├── modules/                # Shared Terraform modules
 └── README.md
-
+```
 
 ##  Key Features
 
