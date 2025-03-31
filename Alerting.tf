@@ -1,6 +1,6 @@
 # 1. Create SNS Topic for alerts
 resource "aws_sns_topic" "cost_alerts" {
-  name = "atlan-cost-alerts-topic"
+  name = "ajeya-cost-alerts-topic"
   
   tags = {
     Environment = "production"
@@ -12,12 +12,12 @@ resource "aws_sns_topic" "cost_alerts" {
 resource "aws_sns_topic_subscription" "email_alerts" {
   topic_arn = aws_sns_topic.cost_alerts.arn
   protocol  = "email"
-  endpoint  = "team@atlan.com" # Replace with your email
+  endpoint  = "team@ajeya.com" # Replace with your email
 }
 
 # 3. Create IAM Role for Budget Actions
 resource "aws_iam_role" "budget_action" {
-  name = "atlan-budget-action-role"
+  name = "ajeya-budget-action-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
