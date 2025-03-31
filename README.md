@@ -29,7 +29,7 @@ This repository implements a complete AWS-native cost optimization framework add
 
 ##  Key Features
 
-✅ **Cost Visibility**
+ **Cost Visibility**
 - Daily Cost and Usage Reports (CUR) to S3
 - AWS Budgets with email/Slack notifications
 - QuickSight dashboards for cost analysis
